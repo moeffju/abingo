@@ -2,7 +2,7 @@ class Abingo
   module Controller
     module Dashboard
 
-      ActionController::Base.view_paths.unshift File.join(File.dirname(__FILE__), "../views")
+      # ActionController::Base.view_paths.unshift File.join(File.dirname(__FILE__), "../views")
       
       def index
         @experiments = Abingo::Experiment.all
