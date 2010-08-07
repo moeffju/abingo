@@ -21,8 +21,7 @@ Key default features:
   * Conversions only tracked once per individual.
   * Conversions only tracked if individual saw test.
   * Same individual ALWAYS sees same alternative for same test.
-  * Syntax sugar.  Specify alternatives as a range, array,
-       hash of alternative to weighting, or just let it default to true or false.
+  * Syntax sugar.  Specify alternatives as a range, array, hash of alternative to weighting, or just let it default to true or false.
   * A simple z-test of statistical significance, with output so clear anyone in your organization
        can understand it.
 
