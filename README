@@ -1,6 +1,14 @@
 A/Bingo Version 1.0.0 - Rails 3 Version
 =======================================
 
+**This is a port of ABingo to work as a rails 3 plugin. It is not extensivly tested but appears to work. Future work will make it easier to use.**
+
+**Known Issues with rails 3**
+
+  * **Named Conversions do not work (eg :conversion => "signup")**
+
+
+
 Rails A/B testing.  One minute to install.  One line to set up a new A/B test.
 One line to track conversion.
 
