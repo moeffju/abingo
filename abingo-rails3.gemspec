@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{abingo-rails3}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Patrick McKenzie", "Wildfalcon", "Matthias Bauer"]
@@ -13,11 +13,11 @@ Gem::Specification.new do |s|
   s.description = %q{Rails A/B testing. One minute to install. One line to set up a new A/B test. One line to track conversion.}
   s.email = %q{moeffju@gmail.com}
   s.extra_rdoc_files = [
-    "README"
+    "README.md"
   ]
   s.files = [
     "MIT-LICENSE",
-    "README",
+    "README.md",
     "Rakefile",
     "VERSION",
     "abingo-rails3.gemspec",
