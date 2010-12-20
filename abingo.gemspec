@@ -4,8 +4,8 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{abingo-rails3}
-  s.version = "0.1.1"
+  s.name = %q{abingo}
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Patrick McKenzie", "Wildfalcon", "Matthias Bauer"]
@@ -20,7 +20,6 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
-    "abingo-rails3.gemspec",
     "init.rb",
     "install.rb",
     "lib/abingo.rb",

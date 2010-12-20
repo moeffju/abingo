@@ -4,7 +4,7 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "abingo-rails3"
+    gem.name = "abingo"
     gem.summary = %Q{A/B Testing for Rails 3}
     gem.description = %Q{Rails A/B testing. One minute to install. One line to set up a new A/B test. One line to track conversion.}
     gem.email = "moeffju@gmail.com"
