@@ -4,12 +4,12 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "abingo"
-    gem.summary = %Q{A/B Testing for Rails}
-    gem.description = %Q{Incorperate AB Testing into your rails apps}
-    gem.email = "laurie@wildfalcon.com"
-    gem.homepage = "http://github.com/wildfalcon/abingo"
-    gem.authors = ["Wildfalcon"]
+    gem.name = "abingo-rails3"
+    gem.summary = %Q{A/B Testing for Rails 3}
+    gem.description = %Q{Rails A/B testing. One minute to install. One line to set up a new A/B test. One line to track conversion.}
+    gem.email = "moeffju@gmail.com"
+    gem.homepage = "https://github.com/moeffju/abingo"
+    gem.authors = ["Patrick McKenzie", 'Wildfalcon', 'Matthias Bauer']
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
