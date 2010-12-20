@@ -1,12 +1,9 @@
+class Railtie < Rails::Railtie
 
+  initializer "abingo.initialize" do |app|
+    ActionController::Base.send :include, AbingoSugar
 
-  class Railtie < Rails::Railtie
-  
-    initializer "abingo.initialize" do |app|
-      ActionController::Base.send :include, AbingoSugar
-
-      ActionView::Base.send :include, AbingoViewHelper
-    end
-  
+    ActionView::Base.send :include, AbingoViewHelper
   end
-  
+
+end

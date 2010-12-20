@@ -2,8 +2,6 @@ class Abingo
   module Controller
     module Dashboard
 
-      # ActionController::Base.view_paths.unshift File.join(File.dirname(__FILE__), "../views")
-      
       def index
         @experiments = Abingo::Experiment.all
         render :template => 'ab_dashboard/index'
@@ -20,6 +18,7 @@ class Abingo
         end
         redirect_to :action => "index"
       end
+
     end
   end
 end
