@@ -4,17 +4,17 @@ A/Bingo Version 1.0.3
 Rails A/B testing.  One minute to install.  One line to set up a new A/B test.
 One line to track conversion.
 
-For usage notes, see: http://www.bingocardcreator.com/abingo
+For usage notes, see: [http://www.bingocardcreator.com/abingo](http://www.bingocardcreator.com/abingo)
 
 Installation instructions are below usage examples.
 
 Key default features:
 
-  * Conversions only tracked once per individual.
-  * Conversions only tracked if individual saw test.
-  * Same individual ALWAYS sees same alternative for same test.
-  * Syntax sugar. Specify alternatives as a range, array, hash of alternatives with weights, or just let it default to true or false.
-  * A simple z-test of statistical significance, with output so clear anyone in your organization can understand it.
+* Conversions only tracked once per individual.
+* Conversions only tracked if individual saw test.
+* Same individual ALWAYS sees same alternative for same test.
+* Syntax sugar. Specify alternatives as a range, array, hash of alternatives with weights, or just let it default to true or false.
+* A simple z-test of statistical significance, with output so clear anyone in your organization can understand it.
 
 Example: View
 -------------
