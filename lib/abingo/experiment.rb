@@ -4,15 +4,17 @@ class Abingo::Experiment < ActiveRecord::Base
 
   has_many :alternatives, :dependent => :destroy, :class_name => "Abingo::Alternative"
   validates_uniqueness_of :test_name
+  before_destroy :delete_cache_keys
 
   def cache_keys
-  ["Abingo::Experiment::exists(#{test_name})".gsub(" ", "_"),
-    "Abingo::Experiment::#{test_name}::alternatives".gsub(" ","_"),
-    "Abingo::Experiment::short_circuit(#{test_name})".gsub(" ", "_")
-  ]
+    [
+      "Abingo::Experiment::exists(#{test_name})".gsub(" ", "_"),
+      "Abingo::Experiment::#{test_name}::alternatives".gsub(" ","_"),
+      "Abingo::Experiment::short_circuit(#{test_name})".gsub(" ", "_")
+    ]
   end
   
-  def before_destroy
+  def delete_cache_keys
     cache_keys.each do |key|
       Abingo.cache.delete key
     end
