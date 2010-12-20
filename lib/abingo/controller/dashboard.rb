@@ -6,7 +6,7 @@ class Abingo
       
       def index
         @experiments = Abingo::Experiment.all
-        render :template => 'dashboard/index'
+        render :template => 'ab_dashboard/index'
       end
 
       def end_experiment
