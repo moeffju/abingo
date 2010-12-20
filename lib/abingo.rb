@@ -2,9 +2,11 @@
 #Unless you're fiddling with implementation details, it is the only one you need worry about.
 
 #Usage of ABingo, including practical hints, is covered at http://www.bingocardcreator.com/abingo
+require 'abingo/railtie'
+require 'abingo_sugar'
+require 'abingo_view_helper'
 
 class Abingo
-
   @@VERSION = "1.0.3"
   @@MAJOR_VERSION = "1.0"
   cattr_reader :VERSION
@@ -78,7 +80,7 @@ class Abingo
     unless short_circuit.nil?
       return short_circuit  #Test has been stopped, pick canonical alternative.
     end
-    
+
     unless Abingo::Experiment.exists?(test_name)
       lock_key = "Abingo::lock_for_creation(#{test_name.gsub(" ", "_")})"
       creation_required = true
@@ -102,7 +104,7 @@ class Abingo
 
     choice = self.find_alternative_for_user(test_name, alternatives)
     participating_tests = Abingo.cache.read("Abingo::participating_tests::#{Abingo.identity}") || []
-    
+
     #Set this user to participate in this experiment, and increment participants count.
     if options[:multiple_participation] || !(participating_tests.include?(test_name))
       unless participating_tests.include?(test_name)
@@ -138,7 +140,7 @@ class Abingo
   #
   #An array of either of the above: for each element of the array, process as above.
   #
-  #nil: score a conversion for every test the u
+  #nil: score a conversion for every test the user is participating in.
   def Abingo.bingo!(name = nil, options = {})
     if name.kind_of? Array
       name.map do |single_test|
@@ -201,7 +203,7 @@ class Abingo
       if (@@options[:expires_in_for_bots] && !participating_tests.blank?)
         Abingo.cache.write("Abingo::participating_tests::#{Abingo.identity}", participating_tests, {:expires_in => Abingo.expires_in(true)})
       end
-      
+
       participating_tests.each do |test_name|
         Alternative.score_participation(test_name)
         if conversions = Abingo.cache.read("Abingo::conversions(#{Abingo.identity},#{test_name}")
